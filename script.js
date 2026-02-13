@@ -11,12 +11,12 @@ let fallingInterval;
 // CONTADOR
 // =====================
 function updateCounter(){
-    const startDate = new Date("2024-07-05T00:00:00");
+    const targetDate = new Date("2026-02-14T00:00:00");
     const now = new Date();
-    const diff = now - startDate;
+    const diff = targetDate - now; // ← aquí se invierte
 
-    if(diff < 0){
-        counter.textContent = "Aún no ha comenzado";
+    if(diff <= 0){
+        counter.textContent = "¡Ya llegó el gran día! ❤️";
         return;
     }
 
@@ -28,9 +28,8 @@ function updateCounter(){
     counter.textContent = `${days} días ${hours}h ${minutes}m ${seconds}s`;
 }
 
-setInterval(updateCounter,1000);
+setInterval(updateCounter, 1000);
 updateCounter();
-
 
 // =====================
 // CREAR CORAZÓN
@@ -205,4 +204,6 @@ noBtn.addEventListener("mouseenter", () => {
 
 // INICIAR
 createHeart();
+
+
 
